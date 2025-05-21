@@ -16,13 +16,10 @@ class WeatherExpertSystem:
         return "Default"
 
 expert_system = WeatherExpertSystem()
-expert_system.add_fact("high_temperature")
-expert_system.add_fact("low_humidity")  
-expert_system.add_fact("fog")  
-expert_system.add_fact("Night") 
-expert_system.add_fact("wind")  
-expert_system.add_fact("low_temperature")  
-expert_system.add_rule(["low_temperature", "wind"], "Not Comfortable")
+expert_system.add_fact(input("Enter the temperature: "))
+expert_system.add_fact(input("Enter the humidity: "))
+expert_system.add_fact(input("Enter the wind speed: "))
+expert_system.add_rule(["low_temperature", "fast_wind"], "Not Comfortable")
 expert_system.add_rule(["high_temperature", "low_humidity"], "Comfortable")
 expert_system.add_rule(["fog", "Night"], "Low visibility")
 
